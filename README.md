@@ -26,3 +26,7 @@ Etherscan: https://goerli.etherscan.io/address/0x377C5aee6b2F53eFF8B28d131b642b3
 /* ⏰ Chainlink Automation Time set to Monday, Wednesday, Friday at 8:00 and 16:00 ⏰ */
 ![Alt text](image-1.png)
 ![Alt text](image-2.png)
+
+
+ETHGlobal SUPERHACK BYMEACRYPTO
+https://ethglobal.com/showcase/bymeacrypto-vuygh
