@@ -5,11 +5,9 @@ const networkConfig = {
 
     11155111: {
         name: "sepolia",
-        keepersUpdateInterval: "604800",
     },
     5: {
         name: "Goerli",
-        keepersUpdateInterval: "60",
     },
 }
 

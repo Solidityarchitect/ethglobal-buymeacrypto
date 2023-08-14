@@ -12,7 +12,7 @@ interface IERC20 {
 
 } 
 
-contract USDCvsWBTC {
+contract WbtcPair {
 
     address public constant routerAddress = 0xE592427A0AEce92De3Edee1F18E0157C05861564;	
 
@@ -20,8 +20,8 @@ contract USDCvsWBTC {
 
     // This example swaps DAI/WETH9 for single path swaps and DAI/USDC/WETH9 for multi path swaps.
 
-    address public constant USDC = 0x7F5c764cBc14f9669B88837ca1490cCa17c31607;
-    address public constant WBTC = 0x68f180fcCe6836688e9084f035309E29Bf0A2095;
+    address public constant USDC = 0x07865c6E87B9F70255377e024ace6630C1Eaa37F;
+    address public constant WBTC = 0xC04B0d3107736C32e19F1c62b2aF67BE61d63a05;
 
     IERC20 public usdcToken = IERC20(USDC);
 

@@ -12,7 +12,7 @@ interface IERC20 {
 
 } 
 
-contract USDCvsWLD {
+contract LdoPair {
 
     address public constant routerAddress = 0xE592427A0AEce92De3Edee1F18E0157C05861564;	
 
@@ -21,7 +21,7 @@ contract USDCvsWLD {
     // This example swaps DAI/WETH9 for single path swaps and DAI/USDC/WETH9 for multi path swaps.
 
     address public constant USDC = 0x7F5c764cBc14f9669B88837ca1490cCa17c31607;
-    address public constant WLD = 0xdC6fF44d5d932Cbd77B52E5612Ba0529DC6226F1;
+    address public constant LDO = 0x07865c6E87B9F70255377e024ace6630C1Eaa37F;
 
     IERC20 public usdcToken = IERC20(USDC);
 
@@ -46,7 +46,7 @@ contract USDCvsWLD {
         ISwapRouter.ExactInputSingleParams memory params =
             ISwapRouter.ExactInputSingleParams({
                 tokenIn: USDC,
-                tokenOut: WLD,
+                tokenOut: LDO,
                 fee: poolFee,
                 recipient: address(this),
                 deadline: block.timestamp,
@@ -75,7 +75,7 @@ contract USDCvsWLD {
         ISwapRouter.ExactOutputSingleParams memory params =
             ISwapRouter.ExactOutputSingleParams({
                 tokenIn: USDC,
-                tokenOut: WLD,
+                tokenOut: LDO,
                 fee: poolFee,
                 recipient: address(this),
                 deadline: block.timestamp,
@@ -94,4 +94,5 @@ contract USDCvsWLD {
             usdcToken.transfer(address(this), amountInMaximum - amountIn);
         }
     }
+    
 }

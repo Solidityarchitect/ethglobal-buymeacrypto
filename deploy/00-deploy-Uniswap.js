@@ -8,61 +8,46 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
     log("----------------------------------------------------")
 
-    // LDO
     const arguments = []
-    const LDO = await deploy("USDCvsLDO", {
+    // LDO
+    const lodo = await deploy("LdoPair", {
         from: deployer,
         args: arguments,
         log: true,
         waitConfirmations: network.config.blockConfirmations || 1,
     })
     // LINK
-    const LINK = await deploy("USDCvsLINK", {
-        from: deployer,
-        args: arguments,
-        log: true,
-        waitConfirmations: network.config.blockConfirmations || 1,
-    })
-    // SMATIC
-    const SMATIC = await deploy("USDCvsSMATIC", {
+    const link = await deploy("LinkPair", {
         from: deployer,
         args: arguments,
         log: true,
         waitConfirmations: network.config.blockConfirmations || 1,
     })
     // SNX
-    const SNX = await deploy("USDCvsSNX", {
+    const snx = await deploy("SnxPair", {
         from: deployer,
         args: arguments,
         log: true,
         waitConfirmations: network.config.blockConfirmations || 1,
     })
     // WBTC
-    const WBTC = await deploy("USDCvsWBTC", {
+    const wbtc = await deploy("WbtcPair", {
         from: deployer,
         args: arguments,
         log: true,
         waitConfirmations: network.config.blockConfirmations || 1,
     })
-    // WLD
-    const WLD = await deploy("USDCvsWLD", {
-        from: deployer,
-        args: arguments,
-        log: true,
-        waitConfirmations: network.config.blockConfirmations || 1,
-    })
+
     if (
         !developmentChains.includes(network.name) &&
         process.env.ETHERSCAN_API_KEY
     ) {
         log("Verifying...")
-        await verify(LDO.address, arguments)
-        await verify(LINK.address, arguments)
-        await verify(SMATIC.address, arguments)
-        await verify(SNX.address, arguments)
-        await verify(WBTC.address, arguments)
-        await verify(WLD.address, arguments)
+        await verify(lodo.address, arguments)
+        await verify(link.address, arguments)
+        await verify(snx.address, arguments)
+        await verify(wbtc.address, arguments)
     }
 }
 
-module.exports.tags = ["all", "sushiswap", "main"]
+module.exports.tags = ["all", "uniswap", "main"]
